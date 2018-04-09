@@ -1,0 +1,17 @@
+Spring中依赖注入
+1、构造方法注入：
+（1）将spellChecker类注入到目标类中 <constructor-arg ref="spellChecker"/>
+（2）将值放入目标类 index为顺序 从零开始 <constructor-arg index="0" value="200"/>
+（3）将值放入目标类指定参数类型 <constructor-arg type="int" value="200"/>
+2、设值注入
+（1）将spellChecker类的set方法注入到目标类 <property name="spellChecker" ref="spellChecker"/>
+（2）向目标类成员参数置值  <property name = "name" value = "John Doe"/>
+（3）p-namespace方法 
+ <bean id = "john-classic" class = "com.example.Person"
+      p:name = "John Doe"
+      p:spouse-ref = "jane"/>
+   </bean>
+
+   <bean name =" jane" class = "com.example.Person"
+      p:name = "John Doe"/>
+   </bean>
