@@ -1,0 +1,49 @@
+2018年4月10日
+1、spring 内部类注入
+      <property name="spellChecker">
+            <bean id="spellChecker" class="main.java.InnerBeans.SpellChecker"/>
+      </property>
+   目标类同样调用注入类set方法 类似于设值注入。
+2、注入集合 inject collection 
+(1)list set map property
+ <property name="addressProp">
+            <props>
+                <prop key = "one">INDIA</prop>
+                <prop key = "one">INDIA</prop>
+                <prop key = "two">Pakistan</prop>
+                <prop key = "three">USA</prop>
+                <prop key = "four">USA</prop>
+            </props>
+  </property>
+(2)注入bean
+ <property name="addressList" >
+            <list>
+                <ref bean="address1"></ref>
+                <ref bean="address2"></ref>
+            </list>
+ </property>
+
+ <bean name="address1" class="main.java.Test.Address">
+        <property name="address" value="chagn"></property>
+        <property name="mobile" value="120103106"></property>
+ </bean>
+ <bean name="address2" class="main.java.Test.Address">
+        <property name="address" value="hu"></property>
+        <property name="mobile" value="120104"></property>
+ </bean>
+ 3、自动装配 
+ （1）byName  只适配同一bean名称的类
+    <bean name="textEditor" class="main.java.Autowiring.TextEditor" autowire="byName">
+        <property name="name" value="Generic Text Editor"/>
+    </bean>
+    <bean name="spellChecker" class="main.java.Autowiring.SpellChecker"/>
+  (2) byType  只适配同一目标类的bean 有且只能有一个 如超过一个则报错。
+    <bean name="textEditor" class="main.java.Autowiring.TextEditor" autowire="byType">
+        <property name="name" value="123"/>
+    </bean>
+    <bean nameconstructor="spellChecker1" class="main.java.Autowiring.SpellChecker"/>
+  (3) byconstructor 根据bean的构造函数自行注入。 如有多个构造函数 匹配参数类型正确的。
+    <bean name="textEditor" class="main.java.Autowiring.TextEditorByConstruc" autowire="constructor">
+        <constructor-arg name="name" value="200"/>
+    </bean>
+    <bean name="spellChecker" class="main.java.Autowiring.SpellChecker"/>

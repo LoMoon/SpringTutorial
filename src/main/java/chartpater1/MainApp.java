@@ -5,9 +5,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainApp {
     public static void main(String[] args) {
-        AbstractApplicationContext context = new ClassPathXmlApplicationContext("tutorialspoint/chartpter1/bean.xml");
-//        ApplicationContext context = new FileSystemXmlApplicationContext("C:\\Users\\LoMon\\Workspaces\\MyEclipse Professional 2014\\aaaa\\resources\\tutorialspoint\\chartpter1\\bean.xml");
-//        XmlBeanFactory factory = new XmlBeanFactory(new ClassPathResource("tutorialspoint/chartpter1/bean.xml"));
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext("tutorialspoint/chartpter1/beanByName.xml");
+//        ApplicationContext context = new FileSystemXmlApplicationContext("C:\\Users\\LoMon\\Workspaces\\MyEclipse Professional 2014\\aaaa\\resources\\tutorialspoint\\chartpter1\\beanByName.xml");
+//        XmlBeanFactory factory = new XmlBeanFactory(new ClassPathResource("tutorialspoint/chartpter1/beanByName.xml"));
 //        HelloWorld obj = (HelloWorld) factory.getBean("helloWorld");
         HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
         obj.setMessage("this is singleton");

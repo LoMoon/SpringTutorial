@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainPostProcessor {
     public static void main(String[] args) {
-        AbstractApplicationContext context = new ClassPathXmlApplicationContext("tutorialspoint/postProcessors/bean.xml");
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext("tutorialspoint/postProcessors/beanByName.xml");
 
         PostProcessor obj = (PostProcessor) context.getBean("postProcessor");
         obj.getMessage();

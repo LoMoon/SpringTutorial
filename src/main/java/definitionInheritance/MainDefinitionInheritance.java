@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainDefinitionInheritance {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("tutorialspoint/definitionInheritance/bean.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("tutorialspoint/definitionInheritance/beanByName.xml");
         DefinitionInheritance obja = (DefinitionInheritance)context.getBean("helloWorld");
         obja.getMessage1();
         obja.getMessage2();

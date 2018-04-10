@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean name="javaCollection" class="main.java.InjectingCollection.JavaCollection">
+        <property name="addressList" >
+            <list>
+                <ref bean="address1"></ref>
+                <ref bean="address2"></ref>
+            </list>
+        </property>
+        <property name="addressSet">
+            <set>
+                <ref bean="address1"></ref>
+            </set>
+        </property>
+        <property name="addressMap">
+            <map>
+                <entry key = "1" value-ref="address1"/>
+            </map>
+        </property>
+        <property name="addressProp">
+            <props>
+                <prop key = "one">INDIA</prop>
+                <prop key = "one">INDIA</prop>
+                <prop key = "two">Pakistan</prop>
+                <prop key = "three">USA</prop>
+                <prop key = "four">USA</prop>
+            </props>
+        </property>
+    </bean>
+    <bean name="address1" class="main.java.Test.Address">
+        <property name="address" value="chagn"></property>
+        <property name="mobile" value="120103106"></property>
+    </bean>
+    <bean name="address2" class="main.java.Test.Address">
+        <property name="address" value="hu"></property>
+        <property name="mobile" value="120104"></property>
+    </bean>
+</beans>
