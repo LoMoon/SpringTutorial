@@ -22,3 +22,5 @@
 
 4.12 Method”Î∑¥…‰
 https://blog.csdn.net/mack415858775/article/details/47721909
+https://www.cnblogs.com/zhaoyanjun/p/6074887.html
+https://www.daidingkang.cc/2017/07/18/java-reflection-annotations/
