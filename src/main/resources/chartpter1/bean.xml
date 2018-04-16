@@ -2,7 +2,5 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean name="helloWorld" class="main.java.chartpater1.HelloWorld" scope="singleton" init-method="init" destroy-method="destory">
-        <property name="message" value="HelloWorld"   ></property>
-    </bean>
+
 </beans>
