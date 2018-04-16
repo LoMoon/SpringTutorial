@@ -11,8 +11,6 @@ public class Zoo {
     public Monkey monkey;
     @Autowired
     public Tiger tiger;
-
-    AutowiredAnnotationBeanPostProcessor
     public String toString(){
         return monkey+"\n"+tiger;
     }

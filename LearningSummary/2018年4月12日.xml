@@ -1,0 +1,13 @@
+2018年4月12日
+反射机制：
+Method
+Class class = Class.forName("bean");
+Object obj = class.newInstance();
+Method m = class.getDeclaredMethod(methodName,Paramter.class);
+m.invoke(obj,paramter);
+
+绕过泛型控制
+List<String> list2 = new ArraryList<String>();
+Class c2 = list2.getClass();
+Method m = c2.getMethod("add",Object.class);
+m.invoke(list2,1);
