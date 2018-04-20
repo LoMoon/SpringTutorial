@@ -18,7 +18,7 @@ public class Outer_Demo {
 
 
     void my_method(){
-        int num = 23;
+        final int num = 23;
         class method_inner{
             public void print(){
                 System.out.println(num);
