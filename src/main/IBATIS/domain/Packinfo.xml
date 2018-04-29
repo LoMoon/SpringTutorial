@@ -37,7 +37,22 @@
 
     <select id="queryByResult" resultMap="result" parameterClass="String">
         select * from packinfo where signid = #signid#
+    </select>
 
+    <select id="queryByDynamic" parameterClass="packinfo" resultClass="packinfo">
+        select * from packinfo
+        <dynamic prepend="where" >
+            <isNotEmpty property="signId">
+                signid = #signId#
+            </isNotEmpty>
+            <isEmpty prepend="AND"  property="packName">
+                packid = #packid#
+            </isEmpty>
+
+            <isNotEmpty prepend="AND" property="packName">
+                packnames = #packName#
+            </isNotEmpty>
+        </dynamic>
     </select>
 
 </sqlMap>
