@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SpringTutorialSpoint.iml" filepath="$PROJECT_DIR$/SpringTutorialSpoint.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../tjsyapp_sp/tjsysp.iml" filepath="$PROJECT_DIR$/../tjsyapp_sp/tjsysp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringTutorial.iml" filepath="$PROJECT_DIR$/SpringTutorial.iml" />
+      <module fileurl="file://$USER_HOME$/svn/mycode/jyb/tjsyapp_sp/tjsysp.iml" filepath="$USER_HOME$/svn/mycode/jyb/tjsyapp_sp/tjsysp.iml" />
     </modules>
   </component>
 </project>

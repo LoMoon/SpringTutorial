@@ -94,21 +94,21 @@ public class ExportExcel {
         HSSFRow newRow;
         HSSFCell cell;
         int columnCount = sheet.getRow(0).getLastCellNum();
-        HSSFRow titleRow = sheet.getRow(0);
-        if( titleRow!=null ){
-            for( int i = 0; i< dataJson.size(); i++ ){
-                Map map = dataJson.get( i );
-                newRow = sheet.createRow(i+1 );
-                for(int columnIndex = 0; columnIndex< columnCount; columnIndex++){
-                    String mapKey = titleRow.getCell(columnIndex).toString().trim().toString().trim();
-                    cell = newRow.createCell(columnIndex);
-                    cell.setCellValue( map.get(mapKey)== null ? null : map.get(mapKey).toString() );
-                    System.out.println( cell.getStringCellValue() );
-                }
-
-            }
-
-        }
+//        HSSRow titleRow = sheet.getRow(0);
+//        if( titleRow!=null ){
+//            for( int i = 0; i< dataJson.size(); i++ ){
+//                Map map = dataJson.get( i );
+//                newRow = sheet.createRow(i+1 );
+//                for(int columnIndex = 0; columnIndex< columnCount; columnIndex++){
+//                    String mapKey = titleRow.getCell(columnIndex).toString().trim().toString().trim();
+//                    cell = newRow.createCell(columnIndex);
+//                    cell.setCellValue( map.get(mapKey)== null ? null : map.get(mapKey).toString() );
+//                    System.out.println( cell.getStringCellValue() );
+//                }
+//
+//            }
+//
+//        }
         out = new FileOutputStream(fileDir);
         workbook.write(out);
 

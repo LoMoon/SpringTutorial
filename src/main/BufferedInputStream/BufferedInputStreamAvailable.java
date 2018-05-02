@@ -193,7 +193,7 @@ public class BufferedInputStreamAvailable {
             }
         } catch(IOException e) {
 
-            // if any IOError occurs
+            // if any IOError occursP
             e.printStackTrace();
         } finally {
 
