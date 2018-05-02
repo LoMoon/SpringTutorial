@@ -5,8 +5,54 @@
     <typeAlias alias="packinfo" type="main.IBATIS.domain.Packinfo" />
 
     <insert id="insert" parameterClass="packinfo">
-        insert into packinfo(signId, PACKID, PACKTYPE,PACKNAME)
+        insert into packinfo(signId, PACKID, PACKTYPE,PACKNAMES)
         values (#signId#, #packid#, #packType#,#packName#)
     </insert>
+
+    <select id="query" resultClass="packinfo">
+         select signid,
+                packid,
+                packtype,
+                packnames as packname
+          from packinfo
+    </select>
+
+    <resultMap id="result" class="main.IBATIS.domain.Packinfo">
+        <result property="signId" column="signid"/>
+        <result property="packid" column="packid"/>
+        <result property="packType" column="packType"/>
+        <result property="packName" column="packNames"/>
+    </resultMap>
+    <update id="update" parameterClass="packinfo">
+        update packinfo set signid = #signId#,
+                            packid = #packid#,
+                            packtype = #packType#,
+                            packnames = #packName#
+                      where signid = #signId#
+    </update>
+
+    <delete id="delete" parameterClass="String">
+        delete packinfo where signid = #signId#
+    </delete>
+
+    <select id="queryByResult" resultMap="result" parameterClass="String">
+        select * from packinfo where signid = #signid#
+    </select>
+
+    <select id="queryByDynamic" parameterClass="packinfo" resultClass="packinfo">
+        select * from packinfo
+        <dynamic prepend="where" >
+            <isNotEmpty property="signId">
+                signid = #signId#
+            </isNotEmpty>
+            <isEmpty prepend="AND"  property="packName">
+                packid = #packid#
+            </isEmpty>
+
+            <isNotEmpty prepend="AND" property="packName">
+                packnames = #packName#
+            </isNotEmpty>
+        </dynamic>
+    </select>
 
 </sqlMap>

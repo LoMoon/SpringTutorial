@@ -31,5 +31,11 @@
         <SOURCES />
       </library>
     </orderEntry>
+<<<<<<< HEAD
+=======
+    <orderEntry type="library" name="ibatis-2.0" level="project" />
+    <orderEntry type="library" name="ojdbc-6.0" level="project" />
+    <orderEntry type="library" name="log4j-1.2.17" level="project" />
+>>>>>>> 3a9054965b0a6e1649c66871a4c422921773f5ad
   </component>
 </module>
